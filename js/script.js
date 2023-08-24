@@ -35,6 +35,14 @@ function toggleTask(event) {
 function deleteTask(event) {
     if (event.target.classList.contains('deleteBtn')) {
       const taskItem = event.target.parentElement;
-      taskList.removeChild(taskItem);
+  
+      taskItem.classList.add('removing');
+  
+      //se elimina li despues que termine la animacion css
+      setTimeout(function () {
+        taskList.removeChild(taskItem);
+      }, 500);
+
+      event.stopPropagation();
     }
   }
