@@ -32,4 +32,9 @@ function toggleTask(event) {
   }
 }
 
-// ... Resto de tu código ...
+function deleteTask(event) {
+    if (event.target.classList.contains('deleteBtn')) {
+      const taskItem = event.target.parentElement;
+      taskList.removeChild(taskItem);
+    }
+  }
